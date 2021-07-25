@@ -1,0 +1,12 @@
+<ng-container *ngIf="filePath">
+  <button (click)="downloadPdf()">Download</button>
+  <div #viewer class="viewer"></div>
+</ng-container>
+
+<div class="container" *ngIf="!filePath">
+  <div class="upload">
+    <input type="hidden"/>
+    <p>Upload new file</p>
+    <input type="file" accept="application/pdf" (change)="uploadFile($event)"/>
+  </div>
+</div>
